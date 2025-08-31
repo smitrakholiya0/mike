@@ -1,0 +1,28 @@
+Write a Selenium WebDriver test script in Java to perform the following tasks:
+Write a Selenium WebDriver test script in Java that automates the product
+search process on the Flipkart website. The script should begin by launching the
+Edge browser and opening the URL https://www.flipkart.com/. Once the page
+is loaded, ensure that the browser window is maximized. Your script should then
+locate the search box using a suitable locator strategy, enter the keyword
+“tablet”, and perform the search operation so that the results are displayed.
+After executing the search, include a validation step to check whether the results
+page is correctly displayed. Based on this validation define whether the test case
+has passed or failed. Finally close the browser after 5000ms.
+
+Question-2
+Prepare a Test Case Report in Excel to verify the “product search functionality”
+on https://www.flipkart.com/. The report should be well-structured and clearly
+formatted. It should include unique test case IDs, detailed descriptions, the
+sequence of steps to be followed, and the expected outcomes. While preparing
+the report, think about different scenarios such as searching with valid product
+names, entering invalid or blank inputs, and other possible variations that a user
+might attempt. Record the actual results after executing the cases and mark the
+status accordingly as Pass or Fail. Prepare at least 10 test cases that cover a mix
+of positive and negative scenarios using a proper Excel template.
+
+Question-3
+Write a TestRigor test case to automate the product search process on the
+Flipkart website. The test should open the Flipkart homepage in a browser,
+maximize the window, locate the search box, enter the keyword “Tablet”, and
+submit the search query. Display the results page, include a validation step using
+TestRigor’s check command. Finally, close the browser.
