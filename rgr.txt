@@ -1,0 +1,56 @@
+1 Verify the login functionality
+	Log in
+
+2 Verify the cart functionality
+login
+Click "Add to cart" below "Test.allTheThings() T-Shirt (Red)"
+Click on "cart"
+Check that page contains "your cart"
+Check that page contains "Test.allTheThings() T-Shirt (Red)"
+
+3 Verify the logout functionality
+	loginprocess
+logoutprocess
+
+4 Corner case of 'Verify the logout functionality' skipping input "username"
+	open url"https://www.saucedemo.com/"
+enter "secret_sauce" into "password"
+click "login"
+check that page contains input "username"
+check that page contains button "login"
+
+5  Corner case of 'Verify the logout functionality' skipping input "password"
+
+open url"https://www.saucedemo.com/"
+enter "visual_user" into "username"
+click "login"
+check that page contains input "password"
+check that page contains button "login"
+
+6 check logout functionality
+
+loginprocess
+logoutprocess
+
+7 Verify logout functionality
+
+loginprocess
+logoutprocess
+
+8 Verify add to cart of product
+loginprocess
+click "Add to cart" button after "Sauce Labs Backpack"
+click "Add to cart" button after "Sauce Labs Bike Light"
+click "shopping"
+click "Checkout"
+enter "visual_user" into "First Name"
+enter "abcdefg" into "Last Name"
+enter "123456" into "Postal Code"
+click "continue"
+check that page contains "Checkout:overview"
+click"finish"
+check that page contains "Checkout:Complete"
+click"Back Home"
+
+
+

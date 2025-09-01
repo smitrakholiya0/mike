@@ -1,0 +1,204 @@
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>demo</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>demo</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Selenium Java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.35.0</version>
+    </dependency>
+
+    <!-- WebDriverManager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.9.2</version>
+    </dependency>
+  </dependencies>
+</project>
+
+===================================
+
+
+Swag lab damo
+
+package demo.demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Swag {
+    public static void main(String[] args) 
+    {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        ChromeDriver cd = new ChromeDriver(options);
+
+        System.out.println("Open Browser");
+        cd.get("https://www.saucedemo.com/");
+        System.out.println("Open Website");
+
+        WebElement we = cd.findElement(By.id("user-name"));
+        we.sendKeys("standard_user");
+        we = cd.findElement(By.id("password"));
+        we.sendKeys("secret_sauce");
+        cd.findElement(By.id("login-button")).click();
+        System.out.println("Login Successfully Done");
+
+        cd.findElement(By.className("inventory_item_name")).click();
+        System.out.println("item find");
+
+        cd.findElement(By.id("add-to-cart")).click();
+        System.out.println("Add to cart");
+        //cd.findElement(By.id("remove")).click();
+        //System.out.println("Remove to cart");
+
+        //System.out.println("Removed item");
+        cd.findElement(By.className("shopping_cart_link")).click();
+        System.out.println("Opened cart");
+        
+        cd.findElement(By.id("checkout")).click();
+        System.out.println("checkout");
+        
+        we = cd.findElement(By.id("first-name"));
+        we.sendKeys("Zen");
+        System.out.println("Fname");
+
+        we = cd.findElement(By.id("last-name"));
+        we.sendKeys("Shah");
+        System.out.println("Lname");
+
+        we = cd.findElement(By.id("postal-code"));
+        we.sendKeys("30113");
+        System.out.println("Postal Code entered");
+        
+        cd.findElement(By.id("continue")).click();
+        System.out.println("click continue");
+        cd.findElement(By.id("finish")).click();
+        System.out.println("click finish");
+        
+        
+    }
+}
+==================================================
+
+flip cart damo
+package automation.TESTING;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class flipkart {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		EdgeDriver ed=new EdgeDriver();
+		ed.get("https://www.flipkart.com/");
+		ed.manage().window().maximize();
+		
+		WebElement we=ed.findElement(By.name("q"));
+		we.sendKeys("tablet");
+		we.submit();
+		
+		if(ed.getTitle().toLowerCase().contains("tablet")) {
+			System.out.println("Test case passed ✅");
+		}else {
+			System.out.println("Test case failed ❌");
+		}
+		
+		Thread.sleep(5000);
+		ed.quit();
+
+	}
+
+}
+=================================================
+
+package Amazon.Amazon;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+public class AmazonTest {
+    public static void main(String[] args) throws Exception {
+        // Launch Edge browser
+        EdgeDriver ed = new EdgeDriver();
+        ed.get("https://www.amazon.in/");
+        ed.manage().window().maximize();
+
+        // Find the search bar and search for iPhone 16
+        WebElement searchBox = ed.findElement(By.id("twotabsearchtextbox"));
+        searchBox.sendKeys("iPhone 16");
+        searchBox.submit();
+
+        // Validate search result page
+        if (ed.getTitle().toLowerCase().contains("iphone 16")) {
+            System.out.println("Search Test case passed ✅");
+        } else {
+            System.out.println("Search Test case failed ❌");
+        }
+
+        // Wait for results to load
+        Thread.sleep(3000);
+
+        // Click on the first result
+        WebElement firstResult = ed.findElement(By.cssSelector("h2 a"));
+        firstResult.click();
+
+        // Switch to the product tab (Amazon usually opens in new tab)
+        for (String handle : ed.getWindowHandles()) {
+            ed.switchTo().window(handle);
+        }
+
+        Thread.sleep(3000);
+
+        // Click "Add to Cart"
+        WebElement addToCartBtn = ed.findElement(By.id("add-to-cart-button"));
+        addToCartBtn.click();
+
+        Thread.sleep(3000);
+
+        // Verify if added to cart
+        if (ed.getPageSource().toLowerCase().contains("added to cart")) {
+            System.out.println("Add to Cart Test case passed ✅");
+        } else {
+            System.out.println("Add to Cart Test case failed ❌");
+        }
+
+        // Close browser
+        ed.quit();
+    }
+}
