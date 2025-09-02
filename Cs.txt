@@ -156,6 +156,134 @@ QUESTION : 4
 
 
 
+========================description================================
+1. whois
+
+Used to retrieve domain registration details (registrar, owner, creation/expiry dates, contact info).
+
+Example: whois google.com
+
+
+2. ping
+
+Tests network connectivity between your machine and a host.
+
+Measures round-trip time (RTT) and packet loss.
+
+Example: ping amazon.in -c 10
+
+
+3. nslookup
+
+Queries DNS servers to get domain/IP mapping.
+
+Can check A, AAAA, MX, TXT, etc. records.
+
+Example: nslookup -type=mx example.com
+
+
+4. dig
+
+Advanced DNS lookup tool (Linux/Unix).
+
+Can query specific DNS record types or ANY for all.
+
+Example: dig facebook.com ANY
+
+
+5. host
+
+Simple DNS lookup utility.
+
+Can resolve IPv4, IPv6, and other DNS records.
+
+Example: host -t aaaa google.com
+
+
+6. traceroute / tracert
+
+Shows the path packets take from your system to a destination.
+
+Displays intermediate routers (hops).
+
+Example: tracert google.com
+
+
+7. netstat
+
+Displays network connections, routing tables, interface statistics.
+
+Useful options:
+
+-at → Active TCP connections
+
+-u → UDP connections
+
+-s → Statistics
+
+
+8. tcpdump
+
+A packet sniffer that captures network traffic.
+
+Can save data into .pcap files for Wireshark.
+
+Example: sudo tcpdump -i eth0 -c 20
+
+
+9. windump
+
+Windows version of tcpdump.
+
+Captures packets on Windows systems.
+
+Example: windump -i 1 -w abc.pcap
+
+
+10. nmap
+
+A network scanner for hosts and open ports.
+
+Modes:
+
+-sS → Stealth SYN scan
+
+-sT → TCP Connect scan
+
+-sV → Detect service versions
+
+-p → Specify port(s)
+
+Example: nmap -sV svgu.ac.in
+
+
+11. nc (netcat)
+
+Versatile networking tool used for listening, port scanning, file transfer.
+
+Example: nc -lvp 443
+
+
+12. SQL Injection
+
+Exploiting insecure SQL queries to bypass login or retrieve hidden data.
+
+Examples:
+
+Authentication bypass → ' OR '1'='1' --
+
+Retrieve DB version (MySQL) → ' UNION SELECT @@version --
+
+
+
+
+
+
+
+
+
+
+
 
 
 
