@@ -1,0 +1,166 @@
+QUESTION 1 :
+1. Performs a WHOIS lookup for a given IP address to find out the domain associated with it.
+--- whois 8.8.4.4
+
+2. from command line interface Execute the command:
+Bash Copy code whois example.com Review the output for details about the domain.
+---whois example.com
+
+3. Queries the specified DNS server for information about the server
+---nslookup -type=dns example.com
+
+4. Queries for a specific DNS record type such as A, AAAA, MX, TXT, etc
+---nslookup -type=txt example.com
+---nslookup -type=a example.com
+---nslookup -type=mx example.com
+---nslookup -type=aaaa example.com
+
+5. Displaying the Version of host
+--- host 9.20.9-1-Debian
+
+6. Displays active UDP connections and statistic using netstat.
+--- netstat -u
+--- netstat -su
+
+7.. Captures packets for a specified duration and writes them to a file.
+--- timeout 60 tcpdump -i eth0 -w capture.pcap
+
+8.. Using Nmap –sS reports the open ports on your machine.
+--- nmap -sS localhost
+
+9.. write a command to scan multiple IP addresses using Nmap
+--- nmap 192.168.1.1 192.168.1.2 192.168.1.3
+
+10.. Set up and run a vulnerability scan using OpenVAS against a designated target. 
+Document the findings, focusing on critical vulnerabilities and suggested mitigations.
+--- omp -u admin -w yourpassword -T target-id -P policy-id -S
+
+11.. Implement SQL injection vulnerability in WHERE clause allowing retrieval
+of hidden data.
+--- SELECT * FROM users WHERE username = 'admin' OR '1'='1';
+
+QUESTION : 2
+
+1. Performs a reverse DNS lookup to find the domain name associated with an IP address
+---nslookup 8.8.8.8
+
+2. Enables debug mode to provide more detailed information about the DNS query process
+--- nslookup -debug 163.70.145.35
+
+3. Queries for all types of DNS records available for the domain. (Explain the queries)
+--- dig facebook.com ANY
+
+4. Performs a basic DNS lookup for the specified domain name, returning its IP address. (e.g. host example.com)
+--- host amazon.in
+
+5. Verify the domain name associated with the IP address
+--- whois 52.95.116.115
+
+6 Explain ping command in detail
+--- ping amazon.in -c 10
+
+7 Displays network statistics with the process information using netstat.
+--- netstat -s
+
+8. Captures a 20 packets and then stops using tcpdump
+---sudo tcpdump -c 20
+
+9. Using Nmap –sA determine whether ports are filtered or unfiltered
+on your machine.
+--- sudo namp -sA -p 0- localhost
+
+10. write a command in Nmap to Scan All 65535 Ports of your machine
+--- sudo nmap -sA -p 0- localhost
+
+11.implemet SQL injection vulnerability allowing login by pass.
+---
+
+QUESTION : 3
+
+1. Retrieve and analyse domain registration information. Perform a WHOIS search for three different domains. Document the registrar,registration dates, and any contact information provided.
+--- whois google.com
+--- whois flipcart.com
+--- whois instagram.com
+
+2. Execute the whois command on three different domains in the terminal. Analyze and summarize the output for each domain, focusing on the registrant and status.
+
+3.. Use tcpdump (or windump) to capture packets on a specified
+interface. Filter the capture for HTTP traffic and explain your findings.
+--- sudo tcpdump -i eth0 tcp port 80
+
+4. Explain in detail traceroute command.
+--- tracert google.com
+
+5.. Packet analyzer for Windows using windump
+Run windump -i 1 to capture packets on interface 1.
+--- windump -i 1
+
+6.. Displays active TCP connections and their status using netstat.
+--- netstat -at
+--- netstat -st
+
+7.. Captures packets and writes them to a file abc.pcap using windump
+--- windump -w abc.pcap
+
+8.. On the server machine, start Netcat in listening mode for TCP on a
+specific port (e.g., port 443):
+--- nc -lvp 443
+
+9.write a command in Nmap for TCP Connect Scan completes the TCP handshake with the target, making it reliable but less stealthy.
+--- nmap -sT 8.8.8.8
+
+10. How can we identify the version of services running on open ports using Nmap
+--- nmap -sV svgu.ac.in
+
+11.. implement SQL injection attack, querying the database type and
+version on MySQL and Microsoft
+--- ' UNION SELECT @@version -- (MySQL)
+--- ' UNION SELECT @@version -- (Microsoft SQL Server)
+
+
+QUESTION : 4
+
+1. Performs a reverse DNS lookup to find the domain name associated with an IP address 8.8.8.8
+---nslookup 8.8.8.8
+
+2. Explain windump in detail with all options
+
+3. Queries for all types of DNS records available for the domain. (Explain the queries)
+
+4. Querying DNS Records Using IPv6 using host command4
+---host -t aaaa google.com
+
+5. how we Limits the number of hops (intermediate routers) to the specified maximum in traceroute command? Write a command
+---tracert -h 10 google.com
+
+6 Explain ping command in detail
+---ping webwizards.in
+
+7. Displays network statistics with the process information using netstat.
+---netstat -s
+
+8. Captures a 10 packets and then stops using tcpdump.
+---sudo tcpdump -i etho -c 10
+
+9. Using Nmap –sT Completes the TCP handshake with your machine. 
+--- echo "Listening on port 443"; sudo nc -l -p 443
+---nmap -sT -p 0- localhost
+
+10. write a command in Nmap to Scan a Range of Ports of your machine
+--- nmap -sT -p 400-2000 localhost
+
+11.. implemet SQL injection vulnerability of Unprotected admin funcionality with unpredictable URL.
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
